@@ -60,11 +60,8 @@ namespace ID3Tagger
                     return (PictureData.Length / 1024).ToString() + " kB";
                 else
                     return "---";
-
             }
         }
-
-
 
         private ID3v2Header _hdr = new ID3v2Header();
 
@@ -163,7 +160,7 @@ namespace ID3Tagger
 
             // Frames start after the header, unless there's an extended header.  If there is an
             // extended header, skip it.  FUTURE: Parse ext header and do something with it?
-            int offset = 10;
+            int offset = ID3Constants.ID3_HDR_SIZE;
             if (hdr.HasExtHeader)
             {
                 if (hdr.Version == ID3Version.ID3v2_3)
