@@ -165,7 +165,7 @@ namespace ID3Tagger
             // 
             textBoxDirectory.Location = new Point(80, 61);
             textBoxDirectory.Name = "textBoxDirectory";
-            textBoxDirectory.Size = new Size(425, 23);
+            textBoxDirectory.Size = new Size(500, 23);
             textBoxDirectory.TabIndex = 0;
             // 
             // label1
@@ -177,9 +177,9 @@ namespace ID3Tagger
             label1.TabIndex = 1;
             label1.Text = "Directory:";
             // 
-            // button1
+            // buttonApply
             // 
-            buttonApply.Location = new Point(395, 22);
+            buttonApply.Location = new Point(470, 22);
             buttonApply.Name = "buttonApply";
             buttonApply.Size = new Size(110, 23);
             buttonApply.TabIndex = 2;
@@ -189,7 +189,7 @@ namespace ID3Tagger
             // 
             // buttonShowLog
             // 
-            buttonShowLog.Location = new Point(17, 22);
+            buttonShowLog.Location = new Point(122, 22);
             buttonShowLog.Name = "buttonShowLog";
             buttonShowLog.Size = new Size(110, 23);
             buttonShowLog.TabIndex = 3;
@@ -226,7 +226,7 @@ namespace ID3Tagger
             // 
             // buttonStrip
             // 
-            buttonStrip.Location = new Point(269, 22);
+            buttonStrip.Location = new Point(354, 22);
             buttonStrip.Name = "buttonStrip";
             buttonStrip.Size = new Size(110, 23);
             buttonStrip.TabIndex = 5;
@@ -236,7 +236,7 @@ namespace ID3Tagger
             // 
             // buttonRefresh
             // 
-            buttonRefresh.Location = new Point(143, 22);
+            buttonRefresh.Location = new Point(6, 22);
             buttonRefresh.Name = "buttonRefresh";
             buttonRefresh.Size = new Size(110, 23);
             buttonRefresh.TabIndex = 6;
@@ -333,14 +333,14 @@ namespace ID3Tagger
             groupBox2.Controls.Add(buttonStrip);
             groupBox2.Location = new Point(439, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(701, 99);
+            groupBox2.Size = new Size(595, 99);
             groupBox2.TabIndex = 9;
             groupBox2.TabStop = false;
             groupBox2.Text = "Commands";
             // 
             // buttonAutoTag
             // 
-            buttonAutoTag.Location = new Point(511, 22);
+            buttonAutoTag.Location = new Point(238, 22);
             buttonAutoTag.Name = "buttonAutoTag";
             buttonAutoTag.Size = new Size(110, 23);
             buttonAutoTag.TabIndex = 7;
