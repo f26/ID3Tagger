@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ID3Tagger
+{
+    public interface ILogger
+    {
+        public void Log(string msg);
+        public void LogWarn(string msg);
+        public void LogErr(string msg);
+        public string ToString();
+        public void Clear();
+    }
+}
