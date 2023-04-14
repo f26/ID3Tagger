@@ -75,7 +75,7 @@ namespace ID3Tagger
         {
             if (olv.Objects == null) return;
 
-            button1.Enabled = olv.Enabled = false;
+            buttonApply.Enabled = olv.Enabled = false;
             Application.DoEvents();
 
             foreach (ID3Tag tag in olv.Objects)
@@ -118,7 +118,7 @@ namespace ID3Tagger
 
             ReloadFilesFromDisk();
             richTextBoxLog.Text = _logger.ToString();
-            button1.Enabled = olv.Enabled = true;
+            buttonApply.Enabled = olv.Enabled = true;
         }
 
 
@@ -211,7 +211,7 @@ namespace ID3Tagger
             FormVerify f = new FormVerify();
             if (f.ShowDialog() != DialogResult.OK || olv.Objects == null) return;
 
-            button1.Enabled = olv.Enabled = false;
+            buttonApply.Enabled = olv.Enabled = false;
             Application.DoEvents();
 
             foreach (ID3Tag tag in olv.SelectedObjects)
@@ -232,7 +232,7 @@ namespace ID3Tagger
 
             ReloadFilesFromDisk();
             richTextBoxLog.Text = _logger.ToString();
-            button1.Enabled = olv.Enabled = true;
+            buttonApply.Enabled = olv.Enabled = true;
         }
 
         private void olv_CellRightClick(object sender, BrightIdeasSoftware.CellRightClickEventArgs e)
@@ -269,5 +269,35 @@ namespace ID3Tagger
             }
         }
 
+        private void buttonAutoTag_Click(object sender, EventArgs e)
+        {
+            // Remove all ID3 tags from selected files
+            if (olv.SelectedObjects == null) return;
+
+            buttonApply.Enabled = olv.Enabled = false;
+            Application.DoEvents();
+
+            foreach (ID3Tag tag in olv.SelectedObjects)
+            {
+                try
+                {
+                    string filename = Path.GetFileName(tag.Fullname);
+                    string[] parts = filename.Split(" - ");
+
+                    if (parts.Length == 2)
+                    {
+                        tag.Artist = parts[0];
+                        tag.Title = parts[1].Replace(".mp3", "").Replace(".MP3", "");
+                        olv.RefreshObject(tag);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogErr(Path.GetFileName(tag.Fullname) + ": " + ex.Message);
+                }
+            }
+
+            buttonApply.Enabled = olv.Enabled = true;
+        }
     }
 }

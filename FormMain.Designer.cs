@@ -46,7 +46,7 @@ namespace ID3Tagger
             colVersion = new OLVColumn();
             textBoxDirectory = new TextBox();
             label1 = new Label();
-            button1 = new Button();
+            buttonApply = new Button();
             buttonShowLog = new Button();
             splitContainer1 = new SplitContainer();
             richTextBoxLog = new RichTextBox();
@@ -60,6 +60,7 @@ namespace ID3Tagger
             label2 = new Label();
             checkBoxAlwaysRewrite = new CheckBox();
             groupBox2 = new GroupBox();
+            buttonAutoTag = new Button();
             ((System.ComponentModel.ISupportInitialize)olv).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -178,13 +179,13 @@ namespace ID3Tagger
             // 
             // button1
             // 
-            button1.Location = new Point(395, 22);
-            button1.Name = "button1";
-            button1.Size = new Size(110, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Apply";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += buttonApply_Click;
+            buttonApply.Location = new Point(395, 22);
+            buttonApply.Name = "buttonApply";
+            buttonApply.Size = new Size(110, 23);
+            buttonApply.TabIndex = 2;
+            buttonApply.Text = "Apply";
+            buttonApply.UseVisualStyleBackColor = true;
+            buttonApply.Click += buttonApply_Click;
             // 
             // buttonShowLog
             // 
@@ -323,18 +324,29 @@ namespace ID3Tagger
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(buttonAutoTag);
             groupBox2.Controls.Add(buttonRefresh);
-            groupBox2.Controls.Add(button1);
+            groupBox2.Controls.Add(buttonApply);
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(buttonShowLog);
             groupBox2.Controls.Add(textBoxDirectory);
             groupBox2.Controls.Add(buttonStrip);
             groupBox2.Location = new Point(439, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(525, 99);
+            groupBox2.Size = new Size(701, 99);
             groupBox2.TabIndex = 9;
             groupBox2.TabStop = false;
             groupBox2.Text = "Commands";
+            // 
+            // buttonAutoTag
+            // 
+            buttonAutoTag.Location = new Point(511, 22);
+            buttonAutoTag.Name = "buttonAutoTag";
+            buttonAutoTag.Size = new Size(110, 23);
+            buttonAutoTag.TabIndex = 7;
+            buttonAutoTag.Text = "Auto Tag";
+            buttonAutoTag.UseVisualStyleBackColor = true;
+            buttonAutoTag.Click += buttonAutoTag_Click;
             // 
             // FormMain
             // 
@@ -367,7 +379,7 @@ namespace ID3Tagger
         private OLVColumn colFilename, colArtist, colTitle, colAlbum, colYear, colTrack, colGenre, colRating, colHasPicture, colVersion, colComment;
         private TextBox textBoxDirectory;
         private Label label1;
-        private Button button1;
+        private Button buttonApply;
         private Button buttonShowLog;
         private SplitContainer splitContainer1;
         private RichTextBox richTextBoxLog;
@@ -381,5 +393,6 @@ namespace ID3Tagger
         private CheckBox checkBoxStripID3v1;
         private GroupBox groupBox2;
         private CheckBox checkBoxWriteEmptyFrames;
+        private Button buttonAutoTag;
     }
 }
