@@ -320,7 +320,21 @@ namespace ID3Tagger
         private void WriteRating(ID3Version v, BinaryWriter bw)
         {
             if (Rating == "" && !WriteEmptyFrames) return;
-            byte r = Convert.ToByte(Rating);
+
+            // Empty rating results in writing a zero
+            if (Rating == "") Rating = "0";
+
+            byte r = 0;
+            try
+            {
+                r = Convert.ToByte(Rating);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogErr("Error attempting to write rating: " + ex.Message);
+                return;
+            }
+
             WriteFrameHeader(v, bw, "POPM", 6);
             bw.Write((byte)0); // Email
             bw.Write(r); // Rating
