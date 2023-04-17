@@ -35,7 +35,7 @@
             // 
             // buttonOk
             // 
-            buttonOk.Location = new Point(162, 357);
+            buttonOk.Location = new Point(163, 380);
             buttonOk.Name = "buttonOk";
             buttonOk.Size = new Size(75, 23);
             buttonOk.TabIndex = 2;
@@ -45,7 +45,7 @@
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(243, 357);
+            buttonCancel.Location = new Point(244, 380);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(75, 23);
             buttonCancel.TabIndex = 3;
@@ -57,14 +57,14 @@
             // 
             pictureSelector1.Location = new Point(12, 12);
             pictureSelector1.Name = "pictureSelector1";
-            pictureSelector1.Size = new Size(307, 339);
+            pictureSelector1.Size = new Size(307, 362);
             pictureSelector1.TabIndex = 4;
             // 
             // FormPicture
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(330, 392);
+            ClientSize = new Size(330, 411);
             Controls.Add(pictureSelector1);
             Controls.Add(buttonCancel);
             Controls.Add(buttonOk);

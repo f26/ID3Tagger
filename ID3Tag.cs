@@ -47,8 +47,6 @@ namespace ID3Tagger
         public byte[] PictureData { get { return _pictureData; } set { _pictureData = value; Modified = true; } }
         public bool WriteEmptyFrames { get; set; } = false;
 
-        // Settings
-
 
         // Read only properties
         public string Filename { get { return Path.GetFileName(Fullname); } }

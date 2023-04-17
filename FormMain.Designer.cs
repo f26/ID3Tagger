@@ -72,6 +72,7 @@ namespace ID3Tagger
             // 
             // olv
             // 
+            olv.BackColor = Color.Wheat;
             olv.CellEditActivation = ObjectListView.CellEditActivateMode.SingleClick;
             olv.CellEditUseWholeCell = false;
             olv.Columns.AddRange(new ColumnHeader[] { colFilename, colArtist, colTitle, colAlbum, colYear, colTrack, colGenre, colRating, colHasPicture, colComment, colVersion });
